@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5432/yu_ai_agent}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:}
+  autoconfigure:
+    exclude:
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeChatAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAgentAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeImageAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioTranscriptionAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioSpeechAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeRerankAutoConfiguration
+  ai:
+    model:
+      chat: openai
+      embedding: dashscope
+    openai:
+      api-key: ${DEEPSEEK_API_KEY}
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: ${DEEPSEEK_MODEL:deepseek-v4-flash}
+    dashscope:
+      api-key: ${DASHSCOPE_API_KEY}
+      embedding:
+        enabled: true
+        options:
+          model: text-embedding-v3
+    mcp:
+      client:
+        enabled: true
+        request-timeout: 60s
+        stdio:
+          servers-configuration: classpath:mcp-servers-local.json
+
+app:
+  public-demo:
+    enabled: ${PUBLIC_DEMO_MODE:false}
+  rag:
+    enabled: false
+    cloud-enabled: false
+  caishu:
+    source-directory: ${CAISHU_SOURCE_DIRECTORY:./data/caishu}
+    ollama-base-url: ${OLLAMA_BASE_URL:http://127.0.0.1:11434}
+    embedding-model: ${OLLAMA_EMBEDDING_MODEL:qwen3-embedding:0.6b}
