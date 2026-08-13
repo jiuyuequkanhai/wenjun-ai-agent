@@ -1,6 +1,6 @@
 # 文俊的超级助手
 
-面向 FDE（Forward Deployed Engineer）作品集场景的 AI 应用平台。项目在原有 AI 智能体教学项目基础上进行了完整的业务改造，提供行业调研、个人知识库问答和通用超级智能体三类能力。
+面向 FDE（Forward Deployed Engineer）作品集场景的 AI 应用平台，提供行业调研、个人知识库问答和通用超级智能体三类能力。
 
 ## 核心功能
 
@@ -78,10 +78,6 @@ npm run dev
 前端默认地址：`http://127.0.0.1:3001`
 
 macOS 本机也可以使用项目中的 `start-local.command` 和 `stop-local.command` 管理前后端进程。该脚本默认从 macOS 钥匙串读取密钥。
-
-## 项目来源
-
-本项目基于程序员鱼皮的开源教学项目 [liyupi/yu-ai-agent](https://github.com/liyupi/yu-ai-agent) 二次开发。原项目的代码历史和作者信息均予以保留；本仓库主要展示在业务定位、RAG 知识库、文件解析、对话持久化、工具安全和前端交互方面的改造。
 
 ## 安全说明
 
