@@ -76,9 +76,3 @@ npm run dev
 前端默认地址：`http://127.0.0.1:3001`
 
 macOS 本机也可以使用项目中的 `start-local.command` 和 `stop-local.command` 管理前后端进程。该脚本默认从 macOS 钥匙串读取密钥。
-
-## 安全说明
-
-- `application-local.yml`、构建产物和运行日志不会提交到仓库。
-- 公共演示模式会禁用终端、任意文件访问和资源下载等高风险工具。
-- 请定期轮换第三方 API Key，不要在 Issue、截图或提交记录中公开密钥。
